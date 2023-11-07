@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
+from datetime import datetime  # Import datetime module
 import time
 
 data = []  # Hold our scraped data
@@ -40,14 +41,17 @@ def scrape_rnz():
 
             data.append({'Headline': headline, 'Summary': summary, 'URL': link, 'ArticleText': article_text})
 
-# Set up Jinja2 environment
+    # Get current date
+    today = datetime.now().strftime('%Y-%m-%d')
+    
+    # Set up Jinja2 environment
     env = Environment(loader=FileSystemLoader('templates'))
-
+    
     # Render homepage.html
     homepage_template = env.get_template('homepage.html')
     with open('index.html', 'w') as f:
         f.write(homepage_template.render(data=data, today=today))
-
+    
     # Render article.html for each article
     article_template = env.get_template('article.html')
     for i, article in enumerate(data):
