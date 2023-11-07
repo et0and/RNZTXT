@@ -19,7 +19,7 @@
                 <div class="news-item">
                     <h3>{{ item.Headline }}</h3>
                     <p>{{ item.Summary }}</p>
-                    <a href="{{ url_for('article', article_id=loop.index0) }}">Read more</a>
+                    <a href="article_{{ loop.index0 }}.html">Read more</a>
                 </div>
             {% endfor %}
         <div class="hr-line"></div>
