@@ -42,7 +42,7 @@ def scrape_rnz():
 
     # Write data to a JSON file
     with open('index.html', 'w') as f:
-        f.write('<html><body>')
+        f.write('<html><head><link rel="stylesheet" href="styles.css"></head><body>')
         for item in data:
             f.write('<h1>' + item['Headline'] + '</h1>')
             f.write('<p>' + item['Summary'] + '</p>')
