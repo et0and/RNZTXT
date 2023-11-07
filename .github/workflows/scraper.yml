@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests BeautifulSoup4
+          pip install requests BeautifulSoup4 jinja2
 
       - name: Run script
         run: python script.py
@@ -29,6 +29,6 @@ jobs:
           git diff
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
-          git add index.html
+          git add index.html article_*.html
           git commit -am "Update headlines" -a || echo "No changes to commit"
           git push
