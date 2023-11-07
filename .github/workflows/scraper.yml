@@ -2,7 +2,7 @@ name: Scrape RNZ
 
 on:
   schedule:
-    - cron: '0 */3 * * *' # this will run the action every day at midnight
+    - cron: '*/10 * * * *' # this will run the action every day at midnight
 
 jobs:
   scrape:
