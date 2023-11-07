@@ -41,7 +41,7 @@ def scrape_rnz():
             data.append({'Headline': headline, 'Summary': summary, 'URL': link, 'ArticleText': article_text})
 
 # Set up Jinja2 environment
-    env = Environment(loader=FileSystemLoader('/templates'))
+    env = Environment(loader=FileSystemLoader('templates'))
 
     # Render homepage.html
     homepage_template = env.get_template('homepage.html')
