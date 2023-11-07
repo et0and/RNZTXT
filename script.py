@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import json
+from jinja2 import Environment, FileSystemLoader
 import time
 
 data = []  # Hold our scraped data
@@ -40,15 +40,18 @@ def scrape_rnz():
 
             data.append({'Headline': headline, 'Summary': summary, 'URL': link, 'ArticleText': article_text})
 
-    # Write data to a JSON file
+# Set up Jinja2 environment
+    env = Environment(loader=FileSystemLoader('/templates'))
+
+    # Render homepage.html
+    homepage_template = env.get_template('homepage.html')
     with open('index.html', 'w') as f:
-        f.write('<html><head><link rel="stylesheet" href="styles.css"></head><body>')
-        for item in data:
-            f.write('<h1>' + item['Headline'] + '</h1>')
-            f.write('<p>' + item['Summary'] + '</p>')
-            f.write('<a href="' + item['URL'] + '">Read more</a>')
-            for paragraph in item['ArticleText']:
-                f.write('<p>' + paragraph + '</p>')
-        f.write('</body></html>')
+        f.write(homepage_template.render(data=data, today=today))
+
+    # Render article.html for each article
+    article_template = env.get_template('article.html')
+    for i, article in enumerate(data):
+        with open(f'article_{i}.html', 'w') as f:
+            f.write(article_template.render(article=article))
 
 scrape_rnz()  # Run the function
