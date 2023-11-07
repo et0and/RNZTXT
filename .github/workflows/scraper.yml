@@ -2,7 +2,7 @@ name: Scrape RNZ
 
 on:
   schedule:
-    - cron: '*/10 * * * *' # this will run the action every 10 minutes
+    - cron: '0 */6 * * *' # this will run the action every 6 hours
   push:
 
 jobs:
