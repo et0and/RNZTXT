@@ -34,7 +34,7 @@ def scrape_rnz():
             article_response = s.get(link)
             article_soup = BeautifulSoup(article_response.text, 'html.parser')
             article_text = []
-            for selector in ['.article__body p', '.episode-body p', '.page__body p']:
+            for selector in ['.article__body p','.page__body p']:
                 elements = article_soup.select(selector)
                 for element in elements:
                     article_text.append(element.text)
