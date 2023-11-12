@@ -27,14 +27,14 @@ def scrape_rnz():
         if headline_elem and summary_elem and link_elem:
             headline = headline_elem.text
             summary = summary_elem.text
-            link = url + link_elem['href']
+            link = url + link_elem['href'].strip()
 
             # Scrape article page
             time.sleep(2)  # wait for 2 seconds to avoid being blocked
             article_response = s.get(link)
             article_soup = BeautifulSoup(article_response.text, 'html.parser')
             article_text = []
-            for selector in ['.article__body p','.page__body p']:
+            for selector in ['.article__body p', '.episode-body p', '.page__body p']:
                 elements = article_soup.select(selector)
                 for element in elements:
                     article_text.append(element.text)
