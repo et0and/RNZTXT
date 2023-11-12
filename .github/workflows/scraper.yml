@@ -1,7 +1,6 @@
 name: Scrape RNZ
 
 on:
-  schedule:
   push:
 
 jobs:
