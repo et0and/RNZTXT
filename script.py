@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime # Import datetime module
-from pytz import timezone # Import timezone from pytz
 import time
 
 data = [] # Hold our scraped data
@@ -43,8 +42,7 @@ def scrape_rnz():
            data.append({'Headline': headline, 'Summary': summary, 'URL': link, 'ArticleText': article_text})
 
    # Get current date in New Zealand
-   nz = timezone('Pacific/Auckland') # Define New Zealand timezone
-   today = datetime.now(nz).strftime('%Y-%m-%d') # Get current date in New Zealand
+   today = datetime.now().strftime('%Y-%m-%d')
    
    # Set up Jinja2 environment
    env = Environment(loader=FileSystemLoader('templates'))
