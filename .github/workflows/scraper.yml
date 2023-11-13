@@ -1,35 +1,43 @@
 name: Scrape RNZ
 
 on:
-  schedule:
-    - cron: '*/30 * * * *' # this will run the action every 30 minutes
-  push:
+ schedule:
+   - cron: '*/30 * * * *' # this will run the action every 30 minutes
+ push:
 
 jobs:
-  scrape:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+ scrape:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout code
+       uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
+     - name: Set up Python
+       uses: actions/setup-python@v2
+       with:
+         python-version: '3.x'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests BeautifulSoup4 jinja2
+     - name: Cache Python dependencies
+       uses: actions/cache@v2
+       with:
+         path: ~/.cache/pip
+         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+         restore-keys: |
+           ${{ runner.os }}-pip-
 
-      - name: Run script
-        run: python script.py
+     - name: Install dependencies
+       run: |
+         python -m pip install --upgrade pip
+         pip install requests BeautifulSoup4 jinja2
 
-      - name: Commit and push if it changed
-        run: |
-          git diff
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
-          git add index.html article_*.html
-          git commit -am "Update headlines" -a || echo "No changes to commit"
-          git push
+     - name: Run script
+       run: python script.py
+
+     - name: Commit and push if it changed
+       run: |
+         git diff
+         git config --global user.email "action@github.com"
+         git config --global user.name "GitHub Action"
+         git add index.html article_*.html
+         git commit -am "Update headlines" -a || echo "No changes to commit"
+         git push
