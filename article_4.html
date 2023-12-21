@@ -10,80 +10,124 @@
     </head>
     <body>
     <header>
-        <p>Text-Only Version <a class="full-version-link button" href="https://rnz.co.nz/news/national/505320/ex-corrections-officer-says-corruption-at-rimutaka-prison-widespread">Go to article page</a></p>
+        <p>Text-Only Version <a class="full-version-link button" href="https://rnz.co.nz/news/national/505325/electronic-roll-crashing-on-election-day-could-have-been-avoided">Go to article page</a></p>
     </header>
     <h1><a href="/">TXTRNZ</a></h1>
         <div class="hr-line"></div>
-        <h2>'They're just trying to pretend' - Prison officer says corruption complaints shut down</h2>
+        <h2>How the Election Day electronic roll crash unfolded</h2>
         <p>
-A former Corrections officer says corruption at Rimutaka Prison is widespread and she was threatened with the sack when she spoke up.
+The Electoral Commission has found the crash was "ultimately avoidable".
 </p>
         
             <p>
-Rimutaka Prison. 
-Photo: RNZ / Richard Tindiller
+Photo: RNZ / Anneke Smith
 </p>
         
-            <p>A former Corrections officer says corruption at Rimutaka Prison is widespread and she was threatened with the sack when she spoke up.</p>
+            <p>The Electoral Commission has found a crash of its eRoll on Election Day was "ultimately avoidable".</p>
         
-            <p>A three-year police investigation into the jail has led to one prisoner, a current employee, three former workers and a member of the public facing charges of corruption and bribery.</p>
+            <p>The electronic version of the electoral roll went down shortly after 10am on election day 14 October, and was not fixed until just before 2pm.</p>
         
-            <p>The prison guard, who RNZ has agreed not to name, worked at Rimutaka Prison for seven years and said the charges laid under police Operation Portia would not stamp out corruption.</p>
+            <p>While it only affected those casting special votes, many voting centres were already under strain with massive queues, and this caused further delays and confusion.</p>
         
-            <p>She said guards walked past cells and turned a blind eye to contraband, including mobile phones and tattoo guns.</p>
+            <p>The eRoll is a mobile app developed exclusively for the Electoral Commission and was developed and maintained by IT company Catalyst.</p>
         
-            <p>"They're just trying to pretend they're not seeing things that are going on right in front of them."</p>
+            <p>On election day staff used it to search the live electoral rolls for voters who did not have their EasyVote card with them.</p>
         
-            <p>However, it was not just prisoners in possession of banned items; some staff would also bring in banned items without the proper paperwork and security clearance, she said.</p>
+            <p>"It is an electronic option to do what can also be done by looking up the hard copy rolls in the voting place for electors enrolled by writ day and looking up the index to places and streets to work out which electorate a person lives in."</p>
         
-            <p>The former officer said she had taken contraband memory sticks off staff as they came through the gates to work. She handed them to the security manager, then watched as he gave them back to the staff.</p>
+            <p>Documents released in an OIA to RNZ showed at 9:59am on election day four connections failed - although it was later suggested these were not related to the subsequent outage.</p>
         
-            <p>"That was one of the units that was full of mobile phones and contraband, and that was while Operation Portia was going on."</p>
+            <p>From 10am, intermittent requests began returning a 502 bad gateway error code, which Catalyst later said in its incident report suggested an issue with an upstream (back-end) server.</p>
         
-            <p>She said there may have been information on the memory sticks which would have been useful to the investigation, but they were never given to police.</p>
+            <p>At 10.15am it said it noticed the network was slowing.</p>
         
-            <p>Corrections described its current and former staff who were charged in relation to Operation Portia as a small group, saying the majority of its employees acted with integrity.</p>
+            <p>Teams messages among Electoral Commission staff at 10.18am and 10.20am then advised that the server had gone down.</p>
         
-            <p>However, the former guard disagreed, and said there needed to be an overhaul of managers from the top of the organisation.</p>
+            <p>At 10.22am a text message went out to 6648 voting place phones from the national office confirming that the eRoll was down.</p>
         
-            <p>"Even though Operation Portia has finished, they've no way near dug out as many staff that are corrupt that they need to, it's still ongoing."</p>
+            <p>Another message at 10.30am advised voting places to follow page 18 of the voter assistants manual, which outlined the process for managing queues manually.</p>
         
-            <p>She said when she tried to raise concerns, she was told she was being too strict.</p>
+            <p>At about 11am connections were exhausted and queued requests timed out returning a 504 Gateway Timeout error code.</p>
         
-            <p>"Every time I tried to do my job I just got shut down as though I was stupid," she said.</p>
+            <p>Catalyst support engineers began to diagnose the potential root cause.</p>
         
-            <p>"They just sweep it under the carpet still, and it's too big for people that are genuine and that want to do the job correctly ... there's too much corruption."</p>
+            <p>Between 11.20am and 11.35am two changes recommended by Catalyst to increase capacity were implemented.</p>
         
-            <p>The former guard said at one point she was told she would get the sack if she filed any more incident reports.</p>
+            <p>At about 12.30pm Catalyst suggested the root cause may be a specific piece of code within the application and a recommended change to the code was made.</p>
         
-            <p>"That came from my manager and he's still working there today."</p>
+            <p>However at 1pm when the full load was restored, the issues returned.</p>
         
-            <p>She put the "softly-softly" approach to staff corruption down to fears of being labelled a troublemaker and disrupting the peace.</p>
+            <p>A change to bypass the code section completely was made and proved successful.</p>
         
-            <p>"I think everyone just wants to be a 'yes' person because that's the only way you're going to work up in Corrections ... if you don't, then you're going to not keep your job."</p>
+            <p>At 1.44pm a final text was sent out to voting locations confirming the eRoll was working again.</p>
         
-            <p>The former guard said she had worried about being set up by her colleagues, and had spoken to other staffers who had left because of the culture of bullying. She had put in a personal grievance against another guard in the past and said she left under a cloud.</p>
+            <p>Between 5:15pm and 5:40pm there was another spike in errors, which then dropped away and the system ran without incident for the rest of the day.</p>
         
-            <p>"I just got to the point that because there's so much corruption going on, I don't feel safe ... now I've left, honestly, I feel like a different person. Like the weight has just been completely lifted off my shoulders."</p>
+            <p>An incident report by the Electoral Commission found "the degradation in the eRoll application performance on election day, was ultimately avoidable, with clearer and more accurate requirements and thorough load testing that was more representative of the environment and context on the day".</p>
         
-            <p>The prison guard union said its members had raised concerns about staff conduct at Rimutaka Prison, before the police investigation. Corrections Association president Floyd du Plessis said most staff were not involved, and a small group had brought the wider prison guard cohort into disrepute.</p>
+            <p>The volumetric assumptions used for the 2023 General Election were based on the 2020 election. But enrolment activities on election day itself turned out to be much higher in 2023.</p>
         
-            <p>
-Corrections chief custodial officer Neil Beales. 
-Photo: RNZ / Cole Eastham-Farrelly
-</p>
+            <p>An email from Catalyst on the afternoon of polling day did, however, note "the root cause of the problem is behaviour that has been encoded in the system since it was first developed and released prior to 2020. It has worked without issue for that GE and in the early voting period".</p>
         
-            <p>Corrections did not respond to RNZ's questions about the former guard's claims, but chief custodial officer Neil Beales said in a statement that staff were constantly trying to stay one step ahead of inmates.</p>
+            <p>The email noted that the issue would not have been easily identified in standard load tests.</p>
         
-            <p>"Prisoners will often go to extreme lengths to continue offending while in prison. Our staff manage around 9000 prisoners, who are some of New Zealand's most dangerous people and can be highly manipulative and threatening."</p>
+            <p>The incident report also said officials could have reacted faster if they kept a closer eye on the system.</p>
         
-            <p>He said the Rimutaka Prison director was focused on changing staff culture, standards of behaviour and professional practice - work that started in 2021, the year after Operation Portia began. Those changes included encouraging staff to speak up about concerns and increasing accountability.</p>
+            <p>Official voter turnout was 78.2 percent, down from 82.2 percent in 2020.</p>
         
-            <p>"My clear expectation is that if someone raises concerns about a staff member's integrity, it's taken seriously. If any staff member feels their concerns have not been taken seriously, I urge them to contact me directly. We will not stand for dishonest or illegal behaviour."</p>
+            <p>While the eRoll issues only affected those casting special votes, many voting centres were already under strain with massive queues, and this caused further delays and confusion.</p>
         
-            <p>The integrity training provided to new prison guards would be reviewed next year, Beales said.</p>
+            <p>A voter in Wellington told RNZ on the day that some people had left before voting because of the delays.</p>
         
-            <p>Rimutaka Prison was last inspected by the prison watchdog about a fortnight ago, but the Office of the Inspectorate would not release its report until next year.</p>
+            <p>An email to Electoral Commission staff also reported queues of up to 45 minutes in several electorates, with people reportedly leaving voting lines due to the wait.</p>
+        
+            <p>The Electoral Commission said its eRoll system was used without issue in the 2020 general election, two by-elections and throughout the advanced voting period of the 2023 general election.</p>
+        
+            <p>It was also load-tested prior to the 2023 general election.</p>
+        
+            <p>However, the documents released showed there were other technical issues with the eRoll system in August, September and October, ahead of election day.</p>
+        
+            <p>"These were all resolved or identified as user error and not system issues and are unrelated to the incident on election day," the Electoral Commission said in its response.</p>
+        
+            <p>Voting place staff flagged they were receiving the error message "connection timed out" when trying to use the eRoll. Staff were advised to use the manual roll until the issue was resolved.</p>
+        
+            <p>An incident report from the Electoral Commission found it was unable to access key systems due to Catalyst failing to get notification of planned maintenance by an upstream provider. Catalyst remedied the issue.</p>
+        
+            <p>An issue flagged specifically in the Geraldine Electorate that voters being enrolled are showing up on the special roll when they should show up on the general roll.</p>
+        
+            <p>Service desk were advised that the general roll wasn't showing up on the app, when voting assistants tried to enrol voters, they showed up on the special roll when they should have been on the general roll.</p>
+        
+            <p>Advice was given to ensure voting assistants were issuing ordinary votes.</p>
+        
+            <p>An individual's voting place device was unable to accurately perform eRoll searches, showing all members of the public as being a part of the "special vote" group.</p>
+        
+            <p>An issue of duplicate entries being able to be made to the eRoll was flagged.</p>
+        
+            <p>A person tasked with fixing the problem wrote in a email that possible "connectivity issues", voter assistant impatience and the eRoll not preventing multiple submissions of the same transaction, could all be part of the problem.</p>
+        
+            <p>But he also noted "we won't be able to fix eRoll until after the election given it is being heavily used at the moment and it doesn't look to be a simple fix".</p>
+        
+            <p>"Hopefully we'll see a decrease in these over the next few days as the message gets disseminated. The good news is its only affecting about 3 percent of the updates coming through."</p>
+        
+            <p>It was reported that users were having trouble logging into eRoll and were unable to select electorates.</p>
+        
+            <p>Some voter assistants training in Selwyn were reported to be unable to update address details in the eRoll and were having trouble logging into the eRoll.</p>
+        
+            <p>ERoll errors during training of voting assistants were reported to be impacting the ability to train.</p>
+        
+            <p>Although not a technical issue - emails also showed that instructions had been left out from an initial course on how to use the eRoll.</p>
+        
+            <p>During some change and testing of the eRoll in August, it was flagged that some more updating was needed, although what exactly was redacted.</p>
+        
+            <p>In its incident report, the Electoral Commission said several meetings and workshops had taken place between the Electoral Commission and Catalyst to better understand the events of the day and to ensure lessons were learned.</p>
+        
+            <p>In its response to RNZ, the Electoral Commission said "while the system issues were identified and remedied on election day, the Board of the Electoral Commission subsequently requested a full report on the causes and lessons learned in relation to both the performance of the eRoll Application and the management of the incident," the Electoral Commission said in its response to RNZ.</p>
+        
+            <p>The board had commissioned the following actions:</p>
+        
+            <p>The Electoral Commission will include an update on this work in 2024 as part of its statutory report to the Minister of Justice on the general election.</p>
+        
+            <p>Robust testing was also done ahead of the Port of Waikato by-election, but ultimately decided that the eRoll would not be used.</p>
         
         
         <div class="hr-line"></div>
