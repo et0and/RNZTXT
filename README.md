@@ -1,4 +1,5 @@
 # TXTRNZ - a text-only RNZ news service
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/et0and/RNZTXT/scraper.yml)
 
 ![Screenshot of TXTRNZ on desktop](txtrnz.webp)
 
