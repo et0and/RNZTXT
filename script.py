@@ -9,7 +9,7 @@ s = requests.Session() # Use a single session for all requests
 
 def scrape_rnz():
    global data
-   url = 'https://rnz.co.nz'
+   url = 'https://www.rnz.co.nz'
    response = s.get(url)
    soup = BeautifulSoup(response.text, 'html.parser')
 
