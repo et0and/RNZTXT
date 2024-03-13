@@ -1,12 +1,12 @@
 body {
     /* Use system fonts */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    color: #333;
     line-height: 1.6;
     padding: 1em;
     margin: 0 auto;
     max-width: 40em;
     background-color: #f9f9f9;
+    color: #333;
 }
 
 a {
@@ -67,4 +67,30 @@ a:hover {
 
 .lower-nav-container {
     margin-top: 40px;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333;
+        color: #f9f9f9;
+    }
+
+    a {
+        color: #d2b4b4;
+    }
+
+    a:hover {
+        color: #e0c3c3;
+    }
+
+    .hr-line:after {
+        background: linear-gradient(to right, #d2b4b4 0%, #d2b4b4 33.33%, #666666 33.33%, #666666 66.66%, #333333 66.66%);
+    }
+
+    .button:link, .button:visited {
+        background-color: #333;
+        color: #f9f9f9;
+        border: 2px solid #f9f9f9;
+    }
 }
