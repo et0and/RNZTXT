@@ -49,6 +49,15 @@
             "value": "public, max-age=15552000, immutable"
           }
         ]
+      },
+      {
+        "source": "/static/:path*.(css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=15552000, immutable"
+          }
+        ]
       }
     ]
   }
