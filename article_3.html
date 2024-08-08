@@ -10,35 +10,137 @@
     </head>
     <body>
     <header>
-        <p>Text-Only Version <a class="full-version-link button" href="https://www.rnz.co.nz/news/political/524512/minister-hands-oranga-tamariki-five-new-instructions">Go to article page</a></p>
+        <p>Text-Only Version <a class="full-version-link button" href="https://www.rnz.co.nz/news/world/524506/crowdstrike-releases-root-cause-analysis-of-global-microsoft-breakdown">Go to article page</a></p>
     </header>
     <h1><a href="/">TXTRNZ</a></h1>
         <div class="hr-line"></div>
-        <h2>Minister hands Oranga Tamariki five new instructions</h2>
+        <h2>CrowdStrike reveals 'very embarrassing' mistake behind global meltdown</h2>
         <p>
-"A new approach is required," Karen Chhour says.
+Experts say first-year programming students are taught how to avoid the problem that caused the largest IT outage in history.
 </p>
         
             <p>
- 
-Photo: RNZ / Samuel Rillstone
+Departure monitors show cancelled and delayed flights at Ronald Reagan Washington National Airport on July 19, 2024, in Arlington, Virginia, during a major worldwide computer systems outage. 
+Photo: AFP/Mandel Ngan
 </p>
         
-            <p>Oranga Tamariki has been given five new reporting instructions by the Children's Minister, including how many children in care access a social worker in a two-month period.</p>
+            <p>By Annika Burgess for the ABC</p>
         
-            <p>How the ministry is performing across these new criteria will be publicly reported every quarter starting from the 2024/2025 financial year.</p>
+            <p>CrowdStrike would be feeling "very embarrassed" after issuing its Root Cause Analysis (RCA) of the faulty software update that led to potentially the largest global IT outage in history, experts say.</p>
         
-            <p>Minister Karen Chhour, in a letter to the chief executive Chappie Te Kani, said both her and New Zealanders are deeply concerned about Oranga Tamariki's performance.</p>
+            <p>It came down to a mistake first-year programming students are taught how to avoid.</p>
         
-            <p>"My first and most important priority is to ensure Oranga Tamariki is relentlessly focused on the safety of children and young people in its care.</p>
+            <p>On 19 July, the fateful Blue Screen of Death (BSOD) Friday, about 8.5 million Windows systems around the world went into meltdown when an update for CrowdStrike's Falcon sensor product went very wrong.</p>
         
-            <p>"Too many children in the care of their family, or their caregivers, die every year in this country. It is a national disgrace," Chhour said.</p>
+            <p>The US cybersecurity company released a preliminary report days after the incident.</p>
         
-            <p>"In order to provide greater transparency about its performance, I have instructed Oranga Tamariki to report quarterly, starting from the 2024/25 financial year, on the following key performance indicators:"</p>
+            <p>Now a more in-depth, 12-page analysis has confirmed the root of the cause - one single undetected sensor.</p>
         
-            <p>Chhour said improving Oranga Tamariki's performance starts with "good accountable leadership" but up until now there has been plenty of "finger-pointing" when there's a failure but no clarity about who is actually responsible.</p>
+            <p>CrowdStrike offers ransomware, malware and internet security products almost exclusively to businesses and large organisations.</p>
         
-            <p>"A new approach is required. Key performance indicators and quarterly reporting, to the public, will encourage accountability and better performance in the entire organisation."</p>
+            <p>The widespread outage has been linked to its Falcon sensor software, which is installed to look for threats and help lock them down.</p>
+        
+            <p>Sigi Goode, a professor of information systems at the Australian National University, said Falcon had very privileged access.</p>
+        
+            <p>It sits at what is called the kernel level of Windows.</p>
+        
+            <p>"It's sitting as close to the engine that powers the operating system as possible," Professor Goode said.</p>
+        
+            <p>"Kernel mode is constantly watching what you're doing and listening to requests from the applications you're using, and servicing them in a way that appears seamless to you."</p>
+        
+            <p>He described kernel mode as the traffic police that Falcon sits alongside, saying, "I don't like the look of that vehicle, we should take a look at it".</p>
+        
+            <p>
+Screens display logos of CrowdStrike cybersecurity technology company in Munich on July 19, 2024, amid a massive global IT outage. 
+Photo: AFP/Michaela Stache
+</p>
+        
+            <p>CrowdStrike is constantly updating Falcon.</p>
+        
+            <p>On July 19, the company sent out a Rapid Response Content update to certain Windows hosts.</p>
+        
+            <p>In the RCA, CrowdStrike called it the "Channel 291 Incident", in which a new capability was introduced into Falcon's sensors.</p>
+        
+            <p>Sensors are like "a pathway for evidence," that tell it what sort of suspicious activity to look for, Professor Goode said.</p>
+        
+            <p>"Falcon is looking at a range of sensors - a range of indicators - to see if something is wrong," he said.</p>
+        
+            <p>When updates are sent, it changes the location or the number of sensors to check for a potential attack.</p>
+        
+            <p>In this instance, Falcon expected the update to have 20 input fields, but it had 21 input fields.</p>
+        
+            <p>This "count mismatch" is what caused the global crash, CrowdStrike said.</p>
+        
+            <p>"The Content Interpreter expected only 20 values," the RCA report states.</p>
+        
+            <p>"Therefore, the attempt to access the 21st value produced an out-of-bounds memory read beyond the end of the input data array and resulted in a system crash."</p>
+        
+            <p>Because Falcon is so tightly integrated into the core of Windows, when it crashed it brought down the entire system causing the BSOD.</p>
+        
+            <p>Professor Goode said some of the most common ways to compromise a system were to flood memory.</p>
+        
+            <p>Essentially, you tell the computer to look for something "out of bounds".</p>
+        
+            <p>"It was looking for something that wasn't there," he said.</p>
+        
+            <p>"But Falcon had to look in that 21st location, because that's what it was told to do by the new template it was given."</p>
+        
+            <p>CrowdStrike has apologised for the failure which has led to its chief executive, George Kurtz, being called to testify before the US Congress to explain what happened.</p>
+        
+            <p>"We are using the lessons learned from this incident to better serve our customers," Kurtz said in a statement this week.</p>
+        
+            <p>"To this end, we have already taken decisive steps to help prevent this situation from repeating, and to help ensure that we - and you - become even more resilient."</p>
+        
+            <p>CrowdStrike's quality assurance (QA) processes have come into question.</p>
+        
+            <p>The company has said that its updates "go through an extensive QA process, which includes automated testing, manual testing, validation and rollout steps".</p>
+        
+            <p>But Rapid Response Content, which was used in this instance, goes through a different process.</p>
+        
+            <p>In the report, CrowdStrike admits that "lack of a specific test for non-wildcard matching criteria in the 21st field" contributed to "the confluence of these issues that resulted in a system crash".</p>
+        
+            <p>Toby Murray, associate professor at the University of Melbourne's School of Computing and Information Systems, said the "dodgy data file update" was "embarrassing".</p>
+        
+            <p>He said even basic checks by a human developer would have found the problem.</p>
+        
+            <p>"That is an incredibly basic and fundamental mismatch that was always going to lead to catastrophic problems, sooner or later," he told the ABC.</p>
+        
+            <p>"The fact that the CrowdStrike developers were able to have this obvious inconsistency between the data file format and the software code means that the most basic forms of quality review and assurance were not being correctly carried out."</p>
+        
+            <p>Professor Goode said this kind of mistake shouldn't be happening.</p>
+        
+            <p>He said the update should have been released through a staged deployment.</p>
+        
+            <p>"When they wrote this report, they must have been feeling very embarrassed," he said.</p>
+        
+            <p>"First-year programming students are taught about the 'stack', the series of instructions that need to be executed in a CPU (central processing unit)."</p>
+        
+            <p>CrowdStrike announced it had engaged with two independent software security vendors to conduct a further review of the Falcon sensor code for both security and quality assurance.</p>
+        
+            <p>In the wake of the outage, regulators and businesses have been considering legal implications.</p>
+        
+            <p>The incident sent airports into chaos, supermarket check-outs stopped working, and media outlets struggled to bring you the news.</p>
+        
+            <p>
+Long lines at the check-in desks in departure hall 1 at Schiphol in Amsterdam during the crisis. 
+Photo: SEM VAN DER WAL / AFP
+</p>
+        
+            <p>In Australia alone, the impact on businesses has been estimated at more than $A1 billion ($NZ1.08b).</p>
+        
+            <p>Australian Industry Group chief executive Innes Willox told ABC's The Business he expected the damage bill from the glitch to run into the billions of dollars.</p>
+        
+            <p>But he said it was still unclear whether affected businesses would be able to seek compensation from CrowdStrike for any losses incurred from the outages.</p>
+        
+            <p>America's Delta Airlines last week said the outage had cost the company $US500 million ($NZ 834m) and that it planned to take legal action to get compensation from the cybersecurity firm.</p>
+        
+            <p>CrowdStrike has rejected the claim, saying in a letter from an external lawyer that it is "highly disappointed by Delta's suggestion that CrowdStrike acted inappropriately and strongly rejects any allegation that it was grossly negligent or committed misconduct".</p>
+        
+            <p>Delta cancelled more than 6000 flights over a six-day period, impacting more than 500,000 passengers.</p>
+        
+            <p>It faces a US Transportation Department investigation into why it took so much longer for it to recover from the outage than other airlines.</p>
+        
+            <p>This story was first published by the ABC.</p>
         
         
         <div class="hr-line"></div>
