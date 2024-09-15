@@ -10,66 +10,129 @@
     </head>
     <body>
     <header>
-        <p>Text-Only Version <a class="full-version-link button" href="https://www.rnz.co.nz/news/political/528066/government-to-change-law-stipulating-whether-workers-are-contractors-or-employees">Go to article page</a></p>
+        <p>Text-Only Version <a class="full-version-link button" href="https://www.rnz.co.nz/news/national/528064/making-a-hash-of-it-the-lowdown-on-inland-revenue-and-your-data">Go to article page</a></p>
     </header>
     <h1><a href="/">TXTRNZ</a></h1>
         <div class="hr-line"></div>
-        <h2>Govt to change law on contractors vs employees</h2>
+        <h2>Making a hash of it: The lowdown on Inland Revenue and your data</h2>
         <p>
-Supporters say the move will provide more clarity, but the Greens say it's the latest in "a series of assaults on workers' rights".
+Analysis - Inland Revenue is giving taxpayers' encrypted data to Facebook - but just how good is the encryption?
 </p>
         
             <p>
-Workplace Relations and Safety Minister Brooke van Velden. 
-Photo: RNZ / Samuel Rillstone
+Photo: AFP
 </p>
         
-            <p>The government has outlined its upcoming changes to the law to clarify whether a worker is an employee or a contractor.</p>
+            <p>Analysis - The encrypted details of hundreds of thousands of taxpayers are being given by Inland Revenue to Facebook, Instagram, LinkedIn and Google for targeted advertising - but how good is the encryption?</p>
         
-            <p>The changes are part of the coalition agreement between National and ACT, which states they would "maintain the status quo that contractors who have explicitly signed up for a contracting arrangement can't challenge their employment status in the Employment Court".</p>
+            <p>Inland Revenue and its controlling minister Simon Watts say it is a lock.</p>
         
-            <p>The amendment to the Employment Relations Act will add in a test with four criteria:</p>
+            <p>"This process is irreversible," Watts told RNZ on Monday.</p>
         
-            <p>If all four criteria were met, then the worker was a contractor, Workplace Relations and Safety Minister Brooke van Velden said.</p>
+            <p>Many others demur. They say it is easily reversible - and one software developer built us something to show how.</p>
         
-            <p>If one or more factors were not met, then the existing test in the legislation would apply.</p>
+            <p>Oversees, the objectors include the US Federal Trade Commission and the European Data Protection Supervisor. Closer to home, various software consultants contacted RNZ after the story ran to express their concerns.</p>
         
-            <p>Van Velden said the changes would provide greater certainty for contractors and businesses.</p>
+            <p>"I was absolutely stunned that this is happening and I think there is a very clear privacy breach going on here," one emailed.</p>
         
-            <p>Businesses could use the test when responding to claims that workers were employees, she said.</p>
+            <p>"The IRD seem to be saying: We have a secure method (hashed data) to communicate with data-hungry multinational tech organisations who make money by building products based on the data they can collect about you. Clearly that's a bad argument," another said.</p>
         
-            <p>"The current process for workers challenging their employment status through the courts can be costly for businesses, and can increase business uncertainty in general.</p>
+            <p>A third, ex-hacker Adam Boileau, was blunt about sharing details with organisations that already had billions of data points to start with.</p>
         
-            <p>"Although employment status cases are treated on a case-by-case basis, if a worker is found to be a contractor in one sector or for one occupation, this can rapidly increase uncertainty for similar businesses who hire these types of workers.</p>
+            <p>"Using hashing or other data aggregation in this context is, sadly, just a technological sleight of hand trick to bamboozle," he said.</p>
         
-            <p>"There are a range of workers and businesses across the country who are involved in contracting relationships, and who will benefit from increased clarity of worker status, which this government will deliver."</p>
+            <p>One of Inland Revenue's defences for choosing to use what was arguably the best-bang-for-buck approach to targeted advertising that tax money could buy - after all, papers show it only spent about $400,000 with Facebook this way in the last six years - was a technical one: "Hashing is a type of cryptographic security method that turns identifiers into randomised code and cannot be reversed so identities are protected," it said.</p>
         
-            <p>Van Velden hoped the changes would be introduced in 2025.</p>
+            <p>"For example, john.doe@ird.govt.nz may come out hashed as wLKziR/6RoXDv1MDaXLH1UNUC9nIVr97jrTnL4TcxsM=. Meta, for example, uses this hashed information and compares it to its own hashed information to build custom audiences."</p>
+        
+            <p>Maybe 15 years ago (or whenever exactly it was that Inland Revenue started down this route - online marketer Jack Yan said it was an early adopter), "cannot be reversed" carried weight.</p>
+        
+            <p>But times, and tech, change.</p>
+        
+            <p>After the RNZ story revealed the practice, one software developer set out, of his own volition, to do some tyre kicking.</p>
+        
+            <p>"To prove how ineffective hashing is for anonymising a finite set of values, I created a simple programme that converts any hashed (encrypted) NZ landline [phone] number back to the original (unencrypted) number," he told RNZ.</p>
+        
+            <p>How long does it take?</p>
+        
+            <p>"0.15 seconds."</p>
+        
+            <p>He called his programme the 'SHA256 Generator': SHA stands for standard hash algorithm, and SHA256 is the algorithm Facebook uses (which was introduced along with three other hashing algorithms, globally, over 20 years ago).</p>
+        
+            <p>Here is the consultant's DIY recipe for reversing irreversible hashing: First, generate a list of all possible phone numbers for each area code. "For example, for the South Island, 03 000 0000 to 03 999 9999."</p>
+        
+            <p>Next, generate a SHA256 hash each. The 'Generator' will do that for you, super quick.</p>
+        
+            <p>Store it in a database. Then when a hash lands, and you think it might be a phone number, ask the database.</p>
+        
+            <p>"This is a well known technique for attacking hashed values," the consultant said.</p>
+        
+            <p>As you might imagine, someone streamlined and packaged up this approach, calling it 'the rainbow table'.</p>
+        
+            <p>"A rainbow table attack is a password-cracking method that uses a special table (a "rainbow table") to crack the password hashes in a database," a tech website said.</p>
         
             <p>
-Uber drivers rallying outside the Court of Appeal in Wellington in March. 
-Photo: RNZ / Pretoria Gordon
+Cyber attackers can use databases to decode hashed values. (File image) 
+Photo: 123RF
 </p>
         
-            <p>The Employers and Manufacturers Association said greater certainty around contractors' status would be welcome news for businesses and workers alike.</p>
+            <p>Boileau, the technical editor at Risky.biz, does weekly podcasts on security news. He compared hashing to a meat grinder for lumps of data.</p>
         
-            <p>"Innovative business models utilising contracting are contributing to lifts in productivity as they enable employers to employ specialist skills in a short-term manner," head of advocacy Alan McDonald said.</p>
+            <p>"You can't tell by looking at a hash-sausage which bits of the pig went in."</p>
         
-            <p>"Clarifying the contractor status gives employers certainty without having to test it through the employment courts."</p>
+            <p>A cyber attacker who stole a file of passwords had to attempt to decode the hashes, "to put the sausage into the grinder, turn the handle backwards, and get a pig out", he said.</p>
         
-            <p>BusinessNZ also welcomed the move, saying a recent Appeal Court finding that four Uber drivers were employees - but only when they were logged into the Uber app - had created "a high degree of uncertainty" for businesses.</p>
+            <p>"Instead of this folly, what we - I spent 20 years as a professional hacker - do, is just hash every word in the dictionary and see if we get a match."</p>
         
-            <p>"The government's decision to clarify those relationships in law will be particularly welcomed by all businesses that use digital platforms to contract with workers, and all businesses currently concerned that their contractors could be re-categorised to be employees in the future should they decide to take a court case."</p>
+            <p>Surely that takes ages?</p>
         
-            <p>But the Green Party said the move was "the latest episode in a series of assaults on workers' rights".</p>
+            <p>No. "Using the power of modern 3d gaming graphics equipment, we can do this at speeds of hundreds of billions of words per second. The maths for both are basically the same."</p>
         
-            <p>The government was "laying a brick wall between the most vulnerable workers and the rights that belong to them", the party's workplace relations spokesperson Teanau Tuiono said.</p>
+            <p>If you know something about the nature of the data that has been hashed, then the reversing gets even easier. For instance, if it is likely info on gender, or dates of birth, or phone numbers, or credit cards, then simply computing a hash for every possible phone number or credit card "is trivial, mere seconds or minutes of compute".</p>
         
-            <p>"This is something that quite clearly plays directly into the hands of companies looking to cut corners and boost profit margins at the expense of our workers - by denying people sick pay, holiday pay, and job security. It's yet another example of this government legislating over hard-won rights in the favour of the corporate interests.</p>
+            <p>"Ultimately, there is no easy way to share data with someone or an organisation you don't trust, especially if that organisation already has billions of data points to start with," Boileau said.</p>
         
-            <p>"These changes would also allow companies to limit the number of people they employ on full-time contracts and instead rely on flimsy working arrangements that have less protections and less accountability.</p>
+            <p>"If they want to correlate or investigate to de-anonymise data, they can do so."</p>
         
-            <p>"This slapdash approach goes against the recent Court of Appeal ruling on the Uber case which carefully considered the nature of the working arrangement on the facts, and confirmed the legal status quo that if it looks like an employment arrangement and works like an employment arrangement, it's an employment arrangement."</p>
+            <p>They can. but do Facebook and Google and LinkedIn want to? What is in it for them, if they already have your name, date of birth, address, phone, and email contact?</p>
+        
+            <p>"Look at the kinds of adverts that are being posted, which are targeted at specific people by the IRD," Daniel Wilson, a lecturer in the school of computer science at Auckland University, said.</p>
+        
+            <p>Inland Revenue said it targeted ads at people with an income tax debt due, or a GST debt due, or a student loan debt due, or needing a Working for Families update.</p>
+        
+            <p>"What happens if the aim of IRD is successful and someone clicks on one of the IRD adverts dished up by Facebook?" Wilson said.</p>
+        
+            <p>"Facebook, for instance, keeps track of your ad activity." (You can check that out by going to 'menu', then 'Recent Ad Activity'.)</p>
+        
+            <p>"So if I click on the IRD 'sort out your income tax debt' advert, that is logged ... giving information to Meta that, for instance, I am likely to have an income tax debt is pretty sensitive stuff.</p>
+        
+            <p>"This is in a different league from Meta knowing that I am a fan of, say, popular science books."</p>
+        
+            <p>Inland Revenue offered other defences, including that this was both within the law and an effective way to get tax revenue back.</p>
+        
+            <p>It also stressed that it trusted the tech companies to do the right thing, including deleting the taxpayer's info quickly after use.</p>
+        
+            <p>Wilson said Inland might think deletion limited its responsibility.</p>
+        
+            <p>"But in the broader system context, if IRD is successful in their aim of getting a client to click on a specific ad that indicates a particular tax liability, this information is logged and - in the current environment - is free to be used by social media companies for activities like training AI systems," he said.</p>
+        
+            <p>"Social media organisations would not have been able to collect this specific kind of information without IRD's targeted advertising campaigns."</p>
+        
+            <p>Where is the regulator in this?</p>
+        
+            <p>The Office of the Privacy Commissioner has told RNZ it did not have a general position on hashing, but could look at developing one, if need be. The US Federal Trade Commission and European regulators saw the need years ago.</p>
+        
+            <p>One emailer said the commissioner needed to find out more about Inland Revenue, and conjured the slippery slope. "Up until a few years ago there was a red line that health data should not go offshore. That has been gradually whittled down."</p>
+        
+            <p>Another said that Inland Revenue might be sailing close to the wind. They discussed how Google Adwords Customer Match feature allowed a customer - like Inland Revenue - to upload a list of details to Google to target individuals directly with advertising.</p>
+        
+            <p>One of the terms of service conditions was that the advertiser had to have a privacy policy which allowed them to share customer data with advertisers and third parties.</p>
+        
+            <p>The emailer said they did not believe that Inland Revenue had acquired "the knowing, uncoerced consent for this usage of my private information" as required under the Privacy Act.</p>
+        
+            <p>Inland Revenue defended hashing - then, after the RNZ story ran, said it would take another look "to ensure it is still safe to use".</p>
+        
+            <p>But when was it last safe?</p>
         
         
         <div class="hr-line"></div>
