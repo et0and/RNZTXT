@@ -1,9 +1,9 @@
 name: Scrape RNZ
 
-on:
- schedule:
-   - cron: '*/30 * * * *' # this will run the action every 30 minutes
- push:
+# on:
+# schedule:
+ #  - cron: '*/30 * * * *' # this will run the action every 30 minutes
+
 
 jobs:
  scrape:
